@@ -1,0 +1,13 @@
+bybit.settings:
+  type: config_object
+  label: 'Bybit settings'
+  mapping:
+    api_key:
+      type: text
+      label: 'API key'
+    api_secret:
+      type: text
+      label: 'API secret'
+    testnet:
+      type: boolean
+      label: 'Testnet'

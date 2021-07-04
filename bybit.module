@@ -1,0 +1,46 @@
+<?php
+
+/**
+ * @file
+ * Provides functionality for Bybit module.
+ */
+
+use Drupal\Core\Routing\RouteMatchInterface;
+use Drupal\Core\Url;
+
+/**
+ * Implements hook_help().
+ */
+function bybit_help($route_name, RouteMatchInterface $route_match) {
+  switch ($route_name) {
+    case 'help.page.bybit':
+      $output = '<h3>' . t('About') . '</h3>';
+      $output .= '<p>';
+      $output .= t('The module is designed to provide services to the Bybit Cryptocurrency Exchange Platform. The module is not a means of payment.');
+      $output .= '</p>';
+      $output .= '<p>';
+      $output .= t('This module only provides services for interacting with the site. In order to get access you need to <a href=":register">register</a> and receive <a href=":keys">API keys</a>.', [
+        ':register' => Url::fromUri('https://www.bybit.com/en-US/invite?ref=DBLR3J')->toString(),
+        ':keys' => Url::fromUri('https://www.bybit.com/app/user/api-management')->toString(),
+      ]);
+      $output .= '</p>';
+      $output .= '<p>';
+      $output .= t('You can form any request to the api using the getSignedParams function.');
+      $output .= '</p>';
+      $output .= '<h3>' . t('List of services.') . '</h3>';
+      $output .= '<ul>';
+      $output .= '<li>' . t('Get wallet balance info.') . '</li>';
+      $output .= '<li>' . t('Get wallet fund records.') . '</li>';
+      $output .= '</ul>';
+      return ['#markup' => $output];
+
+    case 'bybit.settings':
+      $output = '<p>';
+      $output .= t('To receive the keys, you need to <a href=":register">register</a>. After logging in to the Bybit, you can generate keys <a href=":keys">here</a>.', [
+          ':register' => Url::fromUri('https://www.bybit.com/en-US/invite?ref=DBLR3J')->toString(),
+          ':keys' => Url::fromUri('https://www.bybit.com/app/user/api-management')->toString(),
+        ]);
+      $output .= '</p>';
+      return ['#markup' => $output];
+  }
+}

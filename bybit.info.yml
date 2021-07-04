@@ -1,0 +1,8 @@
+name: Bybit
+description: The module provides services for interacting with the Bybit Cryptocurrency Exchange Platform.
+package: Crypto
+configure: bybit.settings
+type: module
+core_version_requirement: ^8.8.0 || ^9.0
+
+version: '1.0-alpha1'

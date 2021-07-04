@@ -1,0 +1,5 @@
+bybit.settings:
+  title: 'Bybit settings'
+  description: 'Configure the Bybit module.'
+  route_name: bybit.settings
+  parent: system.admin_config_development

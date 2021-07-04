@@ -1,0 +1,4 @@
+services:
+  bybit.connect:
+    class: Drupal\bybit\Service\BybitService
+    arguments: ['@config.factory', '@http_client']

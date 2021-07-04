@@ -1,0 +1,7 @@
+bybit.settings:
+  path: '/admin/config/development/bybit-settings'
+  defaults:
+    _form: '\Drupal\bybit\Form\BybitSettingsForm'
+    _title: 'Bybit settings'
+  requirements:
+    _permission: 'administer bybit configuration'
